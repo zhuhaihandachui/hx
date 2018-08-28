@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<title>创意平台投票</title>
+		<link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+	<div  class="tab-content container-fluid">	
+		<div role="tabpanel" class="tab-pane active container" id="firstPage">
+			<div class="question">Product</div>
+			<div calss="answers">
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" value="">
+						Option 1
+					</label>
+				</div>
+				<div class="checkbox disabled">
+					<label>
+						<input type="checkbox" value="" disabled>
+						Option 2
+					</label>
+				</div>
+			</div>
+		</div>
+		<div role="tabpanel" class="tab-pane container" id="secondPage">2</div>
+		<div role="tabpanel" class="tab-pane container" id="thirdPage">3</div>
+	</div>
+	
+	<div class="bottom">
+		<div class="col-xs-6 text-center" data-toggle="tab"><a href="#firstPage" data-controls="firstPage" role="tab" data-toggle="tab" id="prevPage">上一页</a></div>
+		<div class="col-xs-6 text-center" data-toggle="tab"><a href="#secondPage" data-controls="secondPage" role="tab" data-toggle="tab" id="nextPage">下一页</a></div>
+	</div>
+
+	<script src = " ../../lib/jquery/jquery-3.3.1.min.js"></script>
+	<script src = " ../../lib/bootstrap/js/bootstrap.min.js"></script>
+	<script src = "./js/main.js"></script>
+</body>
+</html>
