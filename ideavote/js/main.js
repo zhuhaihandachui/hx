@@ -16,6 +16,13 @@ $(document).ready(function() {
 		}
 		pageNavHrefAttr(index);
 	});
+
+	var productInfo = ['Option 1','Option 2','Option 3','Option 4','Option 5','Option 6','Option 7','Option 8','Option 9','Option 10','Option 11','Option 12','Option 13','Option 14','Option 15'];
+	for(var k in productInfo){
+		console.log(123);
+		$('#firstPage .answers').append('<div class="checkbox"><label><input type="checkbox" value="">Option 1</label></div>');
+	}
+
 });
 
 function pageNavHrefAttr(index){
