@@ -5,29 +5,34 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 		<title>创意平台投票</title>
-		<link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../bocshhx/lib/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-	<div  class="tab-content container-fluid">	
+	<div class="modal" id="loading">
+		<img src="../../bocshhx/img/loading.gif" alt="">
+	</div>
+
+	<div  class="tab-content container-fluid" id="tab-content">	
 		<div role="tabpanel" class="tab-pane active container" id="firstPage">
-			<div class="question">Product</div>
+			<div class="question">中银产品创新</div>
 			<div class="answers">
 				
 			</div>
 		</div>
 		<div role="tabpanel" class="tab-pane container" id="secondPage">
-			<div class="question">Sales</div>
+			<div class="question">中银营销方案创新</div>
 			<div class="answers">
 				
 			</div>
 		</div>
 		<div role="tabpanel" class="tab-pane container" id="thirdPage">
-			<div class="question">Management</div>
+			<div class="question">中银管理创新</div>
 			<div class="answers">
 				
 			</div>
 			<div class="center-block" data-toggle="tab" id="subdiv" ><a href="#success" data-controls="success" role="tab" data-toggle="tab" id="subbtn" >提交</a></div>
+			<div data-toggle="tab" id="subdivhide" style="display: none"><a href="#success" data-controls="success" role="tab" data-toggle="tab" id="subbtnhide" ></a></div>
 			<!-- <button type="button" class="btn btn-primary center-block">Submit</button> -->
 		</div>
 		<div role="tabpanel" class="tab-pane container" id="success">
@@ -42,8 +47,8 @@
 		<div class="col-xs-6 text-center" data-toggle="tab"><a href="#secondPage" data-controls="secondPage" role="tab" data-toggle="tab" id="nextPage">下一页</a></div>
 	</div>
 
-	<script src = " ../../lib/jquery/jquery-3.3.1.min.js"></script>
-	<script src = " ../../lib/bootstrap/js/bootstrap.min.js"></script>
+	<script src = " ../../bocshhx/lib/jquery/jquery-3.3.1.min.js"></script>
+	<script src = " ../../bocshhx/lib/bootstrap/js/bootstrap.min.js"></script>
 	<script src = "./js/main.js"></script>
 </body>
 </html>
