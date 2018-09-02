@@ -9,7 +9,7 @@ $(document).ready(function(){
 				cache: false,
 				type: "get",
 				async: false,
-				url: "/index.html",
+				url: "/sh/html/h5/bocshhx/index.html",
 				data: "",
 				success: function (data) {
 					$('#task').html(data);
@@ -23,7 +23,7 @@ $(document).ready(function(){
 			$('#task').html('');
 		}
 	});
-
+// $('#carousel-home').carousel('pause');
 
 	var startX;
 	var endX;
@@ -46,20 +46,20 @@ $(document).ready(function(){
     		'-webkit-transform': 'translate3d('+dis+'px, 0, 0)',
             'transform': 'translate3d('+dis+'px, 0, 0)'
 		});
-		console.log($('.carousel-inner>.item.active').next().children());
+		//console.log($('.carousel-inner>.item.active').next().children());
 	});
 
 
 	$('#carousel-home').on('touchend', function(event) {
 		event.preventDefault();
-		/* Act on the event */
+		dis = 0;
 		endX =  event.originalEvent.changedTouches[0].clientX;
 		$('.carousel-inner>.item.active').css({
     		'-webkit-transform': 'translate3d('+0+'px, 0, 0)',
             'transform': 'translate3d('+0+'px, 0, 0)'
 		});
 		setTimeout(function(){
-			$('#carousel-home').carousel('cycle');
+			// $('#carousel-home').carousel('cycle');
 		},1000);
 	});
 });

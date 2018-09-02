@@ -38,11 +38,14 @@
 
 }
 
-#carousel-home .carousel-inner {
-
+#carousel-home .carousel-inner .item.active{
+	-webkit-transition: -webkit-transform 0s ease-in-out;
+	transition: transform 0s ease-in-out;
 }
 
 
 .tab-content #task {
 	height: 100px;
 }
+
+
