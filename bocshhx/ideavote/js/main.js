@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	$('body').css({
-		'background-size': '100% ' + $(window).height() +"px",
+		'background-size': '100% ' + ($(window).height()-40)  +"px",
 		'background-image': 'url(./img/idea.jpg)',
         'background-repeat': 'no-repeat'
 	});

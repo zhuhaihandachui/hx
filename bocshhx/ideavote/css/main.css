@@ -5,10 +5,17 @@
 
 
 .checkbox {
-    border: 1px solid #ccc;
+    border: 1px solid #0e6796;
+    background-color: #fff;
+    opacity: 0.8;
     padding-left: 10px;
+    padding-right: 10px;
     padding-top: 2px;
     padding-bottom: 2px;
+    border-radius: 5px;
+}
+.checkbox input {
+    top: 0;
 }
 
 .question {
@@ -16,6 +23,7 @@
 	/*background-color: blue;*/
 	font-size: 20px;
 	margin-top: 20px;
+    color: #fff;
 
 /*    position: fixed;
     top: 0; 
@@ -70,8 +78,8 @@
     border: 1px solid transparent;
     border-radius: 4px;
     color: #fff;
-    background-color: #337ab7;
-    border-color: #2e6da4;
+    background-color: #d9534f;
+    border-color: #d43f3a;
 }
 
 .checkbox+.checkbox {
