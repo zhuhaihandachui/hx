@@ -1,13 +1,14 @@
 
 #tab-content{
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 
 
 .checkbox {
     border: 1px solid #0e6796;
     background-color: #fff;
-    opacity: 0.8;
+    opacity: 1;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 2px;
@@ -80,6 +81,9 @@
     color: #fff;
     background-color: #d9534f;
     border-color: #d43f3a;
+}
+#subdiv a {
+    text-decoration: none;
 }
 
 .checkbox+.checkbox {
