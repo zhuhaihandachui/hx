@@ -6,7 +6,7 @@
 
 
 .checkbox {
-    border: 1px solid #0e6796;
+    /*border: 1px solid #0e6796;*/
     background-color: #fff;
     opacity: 1;
     padding-left: 10px;
@@ -127,3 +127,6 @@
     color: #ccc;
 }
 
+#success {
+    background-color: white;
+}
