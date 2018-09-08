@@ -1,5 +1,5 @@
-$(document).ready(function() {
-
+// $(document).ready(function() {
+window.onload = function(){
 	$(document).bind('ajaxSend', function(event) {
 		console.log('ajaxsend ' + new Date());
 		$('#loading').css({
@@ -46,11 +46,12 @@ $(document).ready(function() {
 	// });
 
 	gen_qr();
-	gen_img();
+	var x = gen_rankimg();
+	gen_img('../../../bocshhx/img/timg.jpg', x);
 
 
-
-});
+}
+// });
 
 function gen_qr(){
 	var qrcode1 = new QRCode(document.getElementById('qrcode'),{
@@ -66,10 +67,10 @@ function gen_qr(){
 	});
 }
 
-function gen_img(){
+function gen_img(url, x){
 
 	var img_background = new Image();
-	img_background.src= '../../../bocshhx/img/submit.jpg';
+	img_background.src= url;
 
 
 	img_background.onload =function(){
@@ -82,35 +83,20 @@ function gen_img(){
 		ctx.drawImage(img_background, 0, 0,$(window).width(),$(window).height());
 	
 		//二维码想要展示的宽高
-		var dw = 100;
-		var dh = 100;
+		var dw = 80;
+		var dh = 80;
+		var border = 5;
 		// var wx = $(window).width() - dw-40;
-		var wx = 40;
-		var wy = $(window).height() - dh - 80;
-		var border = 7;
-		var fontSize = 20;
-		var number1 = "123000001323111111111111111111113232131321213";
-		var number1_before = "我是第";
-		var number1_after = "位手机银行全员营销参与者。"
-		var number1_linenumber=1;
+		var wx = $(window).width() - dw - 2*border -20;
+		var wy = $(window).height() - dh - 2*border - 40;
 
+	
+		//autoEnter(number1,restWidth-ctx.measureText(number1_before).width,ctx,line_height,wx+dw+border+20+ctx.measureText(number1_before).width,wy,fontSize,number1_linenumber,number1_before,number1_after);
+		var ran_x = wx - 40 ;
+		ctx.drawImage(document.getElementById('rankImage'), 20, wy, ran_x, ran_x * x);
+		console.log(x);
 
-
-		ctx.font = "bold "+fontSize+"px 宋体";
-		ctx.textBaseline = "top";
-
-		
-		var restWidth = $(window).width()-wx-dw-border-20;
-
-		var line1_width = 0;
-		var line_height = 0;
-		ctx.fillStyle = "black";
-		ctx.fillText(number1_before,wx+dw+border+20,wy+line_height);
-		ctx.fillStyle = "red";
-		autoEnter(number1,restWidth-ctx.measureText(number1_before).width,ctx,line_height,wx+dw+border+20+ctx.measureText(number1_before).width,wy,fontSize,number1_linenumber,number1_before,number1_after);
-
-
-		ctx.fillStyle = "green";
+		ctx.fillStyle = "white";
 		ctx.fillRect(wx-border,wy-border,dw+2*border,dh+2*border);
 		ctx.stroke();
 
@@ -123,6 +109,52 @@ function gen_img(){
 		});
 	}
 
+}
+
+
+function gen_rankimg(){
+		var c = document.getElementById('canvasnum');
+		var fontSize = 16;
+		var interval = 35;
+		var num_width = 70;
+		var l1f_w = 51;
+		var l1a_w = 209;
+		var l2f_w = 68;
+		var l2a_w = 124
+		var l3f_w = 85;
+		var l3a_w = 22;
+		var w = l1f_w+num_width+l1a_w;
+		var h = 2*interval + fontSize
+
+		$(c).attr({
+			'width': w,
+			'height': h
+		});
+		var cctx = c.getContext("2d");
+
+		cctx.drawImage(document.getElementById('l1f'), 0, 0,l1f_w,fontSize);
+		cctx.drawImage(document.getElementById('l1a'), l1f_w+num_width, 0,l1a_w,fontSize);
+		cctx.drawImage(document.getElementById('l2f'), 0, interval,l2f_w,fontSize);
+		cctx.drawImage(document.getElementById('l2a'), l2f_w+num_width, interval,l2a_w,fontSize);
+		cctx.drawImage(document.getElementById('l3f'), 0, 2*interval,l3f_w,fontSize);
+		cctx.drawImage(document.getElementById('l3a'), l3f_w+num_width, 2*interval,l3a_w,fontSize);
+
+
+	
+
+		cctx.font = "bold "+fontSize+"px 宋体";
+		cctx.textBaseline = "top";
+		cctx.fillStyle = "red";
+		cctx.textAlign="center";
+		cctx.fillText("323232",l1f_w+num_width/2,0);
+		cctx.fillText("111",l2f_w+num_width/2,interval);
+		cctx.fillText("33334",l3f_w+num_width/2,2*interval);
+
+		$('#rankImage').attr({
+			'src': c.toDataURL('image/jpg')
+		});
+
+		return  h / w;
 }
 
 
