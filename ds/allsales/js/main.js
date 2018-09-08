@@ -83,17 +83,17 @@ function gen_img(url, x){
 		ctx.drawImage(img_background, 0, 0,$(window).width(),$(window).height());
 	
 		//二维码想要展示的宽高
-		var dw = 80;
-		var dh = 80;
+		var dw = 70;
+		var dh = 70;
 		var border = 5;
 		// var wx = $(window).width() - dw-40;
-		var wx = $(window).width() - dw - 2*border -20;
+		var wx = $(window).width() - dw - 2*border -30;
 		var wy = $(window).height() - dh - 2*border - 40;
 
 	
 		//autoEnter(number1,restWidth-ctx.measureText(number1_before).width,ctx,line_height,wx+dw+border+20+ctx.measureText(number1_before).width,wy,fontSize,number1_linenumber,number1_before,number1_after);
-		var ran_x = wx - 40 ;
-		ctx.drawImage(document.getElementById('rankImage'), 20, wy, ran_x, ran_x * x);
+		var ran_x = wx - 50 ;
+		ctx.drawImage(document.getElementById('rankImage'), 30, wy, ran_x, ran_x * x);
 		console.log(x);
 
 		ctx.fillStyle = "white";
@@ -102,7 +102,9 @@ function gen_img(url, x){
 
 
 		ctx.drawImage(document.getElementById('img1'), wx, wy, dw, dh);
-
+		var logo_x = 15;
+		var logo_y = 15;
+		ctx.drawImage(document.getElementById('boclogo'), wx+dw/2-logo_x/2, wy+dh/2-logo_y/2,logo_x,logo_x);
 
 		$('#newImage').attr({
 			'src': c.toDataURL('image/jpg')
